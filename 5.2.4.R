@@ -1,6 +1,10 @@
 # installing and preparing the packages
 
 
+# install.packages("dplyr")
+# install.packages("nycflights13")
+# library(dplyr)
+# library(nycflights13)
 
 #an arrival delay of two or more hours
 dalay_more2 <- dplyr::filter(nycflights13::flights, arr_delay>=2)
@@ -29,6 +33,9 @@ between_midnight_and6am <- dplyr::filter(nycflights13::flights, hour >=1  &  hou
 
 
 
+#Another useful dplyr filtering helper is between(). What does it do? Can you use it to simplify the code needed to answer the previous challenges?
+#between(x, left, right)
+between_midnight_and6am <- dplyr::filter(nycflights13::flights,between(hour, 0, 6)  )
 
 
 
